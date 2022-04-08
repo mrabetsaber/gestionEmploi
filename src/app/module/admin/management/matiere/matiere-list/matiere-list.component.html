@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      
+
+      <h2>Admin List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let matiere of matieres | async">
+            <td>{{matiere.name}}</td>
+            <td>{{matiere.type}}</td>
+            <td>
+              <button routerLink="updateMatiere/{{matiere.id}}"  class="btn btn-info" style="margin-left: 10px">update</button>
+              <button (click)="deleteMatiere(matiere.id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
